@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.qa.testvagrant.testbase.TestBase;
 
 public class LoginPage extends TestBase{
-	
 	@FindBy(xpath=".//*[@id='logo__b2c']/p/a/img")
 	WebElement logo;
 	
