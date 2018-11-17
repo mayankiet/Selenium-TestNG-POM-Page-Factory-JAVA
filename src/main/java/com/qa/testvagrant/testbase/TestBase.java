@@ -6,21 +6,23 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-//import com.qa.crm.util.TestUtil;
+//import org.openqa.selenium.support.events.EventFiringWebDriver;
+import TestUtils.Utilities;
+
 //import com.qa.crm.util.WebEventListener;
 
  public class TestBase {
+
       public static Properties prop;
       public static WebDriver driver;
-      public  static EventFiringWebDriver e_driver;
-    //public static WebEventListener eventListener;
+      //public  static EventFiringWebDriver e_driver;
+      //public static WebEventListener eventListener;
 	
 	public TestBase() {
 		
 		try {
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream("C:\\Selenium Program\\FreeCRMTestFramework\\src\\main\\java\\config\\configuration.properties");
+			FileInputStream fis = new FileInputStream("C:\\Selenium Program\\TestVagrantAssignment\\src\\main\\java\\config\\configuration.properties");
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -38,18 +40,17 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 			driver = new ChromeDriver();
 			}
 		
-		e_driver = new EventFiringWebDriver(driver);
+		//e_driver = new EventFiringWebDriver(driver);
 		// Now create object of EventListerHandler to register it with EventFiringWebDriver
-		eventListener = new WebEventListener();
-		e_driver.register(eventListener);
-		driver = e_driver;
+		//eventListener = new WebEventListener();
+		//e_driver.register(eventListener);
+		//driver = e_driver;
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.PAGE_IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
-		//driver.get(prop.getProperty("url"));
-		driver.get("https://www.freecrm.com/index.html");
+		driver.manage().timeouts().pageLoadTimeout(Utilities.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Utilities.PAGE_IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
+		driver.get(prop.getProperty("url"));
+		driver.get("https://www.makemytrip.com/");
 	}
-	
 }
