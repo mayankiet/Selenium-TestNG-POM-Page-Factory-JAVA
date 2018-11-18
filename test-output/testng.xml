@@ -2,7 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Make My Trip Automation Test Suite">
 
-
+    <listeners>
+		<listener class-name="ExtentReportListener.ExtentReportListener" />
+	</listeners>  
+  
 	<test name="Make My Trip Test Cases">
 		<classes>
 			<class name="com.qa.testvagrant.LoginTest"></class>
