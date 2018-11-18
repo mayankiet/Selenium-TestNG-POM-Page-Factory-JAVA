@@ -22,8 +22,11 @@ public class FlightBookingPage extends TestBase{
 	@FindBy(xpath=".//*[@id='hp-widget__depart']")
 	WebElement clickDestination;
 	
+	@FindBy(xpath=".//*[@id='hp-widget__depart']")
+	WebElement departDateClick;
+	
 	@FindBy(xpath=".//*[@id='dp1542486644253']/div/div[1]/table/tbody/tr[4]/td[7]")
-	WebElement departDate;
+	WebElement departDateSelect;
 	
 
 	@FindBy(xpath=".//*[@id='hp-widget__paxCounter_pot']")
@@ -45,25 +48,25 @@ public class FlightBookingPage extends TestBase{
     	flightLink.click();
     }
     
-    public void searchFlight() {
+    public flightSelectionPage searchFlight() {
     	
     	Select selectSourceCity = new Select(fromSource);
     	selectSourceCity.selectByValue("Bangalore (BLR)");
     	
     	Select selectDestinationCity = new Select(toDestination);
     	selectDestinationCity.selectByValue("Delhi (DEL))");
-    	//Departure date click
-    	departDate.click();
     	
+    	//Departure date selection
+    	departDateClick.click();
+    	departDateSelect.click();
+    	
+    	//Passengers
+    	clickPassengers.click();
+    	passengers.click();
+    	
+    	//Search Flight
+    	search.click();
+        return new flightSelectionPage();    	
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Make My Trip Automation Test Suite">
+
+
+	<test name="Make My Trip Test Cases">
+		<classes>
+			<class name="com.qa.testvagrant.LoginTest"></class>
+			<class name="com.qa.testvagrant.FlightBookingTest"></class>
+			<class name="com.qa.testvagrant.flightSelectionTest"></class>
+            <class name="com.qa.testvagrant.reviewFlightDetailsTest"></class>
+            <class name="com.qa.testvagrant.passengerDetailsTest"></class>
+            <class name="com.qa.testvagrant.logOutTest"></class>
+		</classes>
+	</test>
+</suite>
