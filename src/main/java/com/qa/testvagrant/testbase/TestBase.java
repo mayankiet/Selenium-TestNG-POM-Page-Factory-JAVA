@@ -32,7 +32,7 @@ import TestUtils.Utilities;
 		
 		String browserName = prop.getProperty("browser");
 		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Selenium Program\\TestVagrantAssignment\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		
