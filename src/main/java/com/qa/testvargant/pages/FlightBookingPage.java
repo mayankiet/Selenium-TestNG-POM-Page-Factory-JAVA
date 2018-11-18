@@ -10,13 +10,13 @@ import com.qa.testvagrant.testbase.TestBase;
 public class FlightBookingPage extends TestBase{
 	
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="//span[@class='overlayWrapper']")
 	WebElement flightLink;
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="//input[@id='hp-widget__sfrom']")
 	WebElement fromSource;
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="//input[@id='hp-widget__sTo']")
 	WebElement toDestination;
 	
 	@FindBy(xpath=".//*[@id='hp-widget__depart']")
